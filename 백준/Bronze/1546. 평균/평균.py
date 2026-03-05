@@ -1,9 +1,11 @@
 import sys
 input = sys.stdin.readline
+
 N = int(input())
 scores = list(map(int, input().split()))
+max_score = max(scores)
 
-max_sc = max(scores)
-new_scores = [(s / max_sc) * 100 for s in scores]
+for i in range(N):
+    scores[i] = scores[i]/max_score*100
 
-print(sum(new_scores) / N)
+print(sum(scores)/len(scores))
